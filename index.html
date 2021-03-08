@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>MobilityDB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Fichiers CSS W3-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Fichiers CSS additionnel-->
+<link rel="stylesheet" href="styles/additionnalStyle.css">
+<!-- Fichiers CSS slideShadow-->
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-orange w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        <a href="publications.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Publications</a>
+        <a href="https://docs.mobilitydb.com/MobilityDB/develop/index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Documentation</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Install</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorial</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container mobdb-blue w3-center" style="padding:60px 16px">
+    <h1 class="w3-margin w3-jumbo">MobilityDB</h1>
+    <p class="w3-xlarge">An open source geospatial trajectory data management & analysis platform.
+    </p>
+    <!--
+    <button class="w3-button w3-orange w3-padding-large w3-large w3-margin-top">Get Started</button>
+    -->
+</header>
+
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-twothird w3-margin-right">
+            <p>
+                Location tracking devices, such as GPS, are nowadays widely used in smart phones, and in vehicles. As a result, geospatial trajectory data are currently being collected and used in many application domains. MobilityDB provides the necessary database support for storing and querying such geospatial trajectory data
+            </p>
+            <p>
+                MobilityDB is implemented as an extension to PostgreSQL and PostGIS. It implements persistent database types, and query operations for managing geospatial trajectories and their time-varying properties.
+            </p>
+            <button class="w3-button w3-orange w3-padding-large w3-large w3-margin-top">Learn More</button>
+        </div>
+    </div>
+    <div class="w3-third">
+        <img class="mobdblogo" src="images/mobilitydb-logo.png" alt="mobilitydb-logo">
+    </div>
+</div>>
+
+
+
+<!-- Benefits -->
+<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey" >
+    <div class="w3-content">
+        <div class="w3-center">
+            <h1>Benefits</h1>
+            <table class="benefits">
+                <tr class="benefits-logo-1">
+                    <td><img class="usblogo" src="images/usblogo.svg" alt="usb-logo"></td>
+                    <td><img class="analyticslogo" src="images/analytics.svg" alt="analytics-logo"></td>
+                    <td><img class="sqllogo" src="images/sql.svg" alt="sql-logo"></td>
+                </tr>
+                <tr class="benefits-text-1">
+                    <td><h5>Compact geospatial data storage</h5></td>
+                    <td><h5>Rich mobility analytics</h5></td>
+                    <td><h5>Easy to use full SQL interface</h5></td>
+                </tr>
+                <tr class="benefits-logo-2">
+                    <td><img class="pythonlogo" src="images/python.svg" alt="python-logo"></td>
+                    <td><img class="worldwidelogo" src="images/worldwide.svg" alt="wolrdwide-logo"></td>
+                    <td><img class="elephantlogo" src="images/elephant.svg" alt="elephant-logo"></td>
+                </tr>
+                <tr class="benefits-text-1">
+                    <td><h5>Python adapters</h5></td>
+                    <td><h5>Moving Features standards (OGC)</h5></td>
+                    <td><h5>PostgreSQL ecosystem</h5></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Easy to Use -->
+<div class="w3-row-padding  w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-center">
+            <h1>Easy to Use</h1>
+
+            <h5 class="w3-padding-32">MobilityDB provides two main geospatial trajectory type: tgeompoint for a temporal geometry point, and tgeogpoint for a temporal geography point. Both can represent a geospatial point that moves over time, where the coordinates are respectively expressed as PostGIS geometry or geography. It also provides a rich set of functions to manage these type; including: input/output, topological relationships, speed, direction, distance, etc.</h5>
+
+        <div class="" style="float: left">
+            <img class="sqlquery" src="images/sqlquery.png" alt="sqlquery">
+        </div>
+        <div class="" style="float: right">
+            <img class="sqlresponse" src="images/sqlresponse.png" alt="sqlresponse">
+        </div>
+            <button class="w3-center w3-button w3-orange w3-padding-large w3-large w3-margin-top">Check out our Workshop</button>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- Quote of the day -->
+<div class="w3-container mobdb-blue w3-center  w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+</div>
+
+<!-- Users' Applications -->
+<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+    <h1 class="w3-center">Users' Applications</h1>
+    <!-- Mosgortrans Mobility Department -->
+
+
+<!-- Test du slideshow -->
+<!-- Conteneur principal de tout le diaporama -->
+<main>
+<div class="diapo">
+    <!-- Conteneur des "diapos" -->
+    <div class="elements">
+        <!-- Première diapo -->
+        <div class="element active">
+            <div class="w3-content">
+                <div class="w3-twothird">
+
+                    <h3 class="w3-padding-32">Mosgortrans Mobility Department</h3>
+
+                    <p class="w3-text-grey">Nina Belyavskaya works at Mosgortrans Mobility Department, whose mission to optimize road public transport routes and timetables in Moscow, Russia. She reported her experience of migrating from PostGIS to MobilityDB in PGConf.Russia 2020</p>
+                    <a href="https://pgconf.ru/en/2020/265266" target="_blank">Have a look at the conference.</a>
+                </div>
+
+                <div class="w3-third w3-center">
+                    <a href="https://pgconf.ru/en/2020/265266" target="_blank"><img class="pgconf2020presentation" src="images/pgconf2020presentation.png" alt="pgc"></a>
+                </div>
+            </div>
+        </div>
+        <!-- Deuxième diapo -->
+        <div class="element">
+            <div class="w3-content">
+
+                <div class="w3-twothird">
+                    <h3 class="w3-padding-32">Digital taxi-top advertising</h3>
+                    <p class="w3-text-grey">Bommakanti Krishna Chaitanya works at Adonmo, a company specialized in digital taxi-top advertising.</p>
+                    <a href="https://anitagraser.com/2020/03/02/movement-data-in-gis-29-power-your-web-apps-with-movement-data-using-mobilitydb-sqlalchemy" target="_blank"> He reported his experience on using MobilityDB together with SQLAlchemy here</a>
+                </div>
+                <div class="w3-third w3-center">
+                    <a href="https://anitagraser.com/2020/03/02/movement-data-in-gis-29-power-your-web-apps-with-movement-data-using-mobilitydb-sqlalchemy" target="_blank"><img class="taxi" src="images/taxi.gif" alt="taxi"></a>
+                </div>
+
+            </div>
+        </div>
+        <!-- Troisième diapo -->
+        <div class="element">
+            <div class="w3-content">
+
+                <div class="w3-twothird">
+                    <h3 class="w3-padding-32">Covid pandemic</h3>
+                    <p class="w3-text-grey">Florian Nadler works at Cybertec, a company specialized on Data Science using PostgreSQL. He reported his experience on using MobilityDB for intersecting tracks of persons in the context of the Covid pandemic here</p>
+                    <a href="https://www.cybertec-postgresql.com/en/intersecting-tracks-of-individuals-mobilitydb/" target="_blank">He reported his experience on using MobilityDB for intersecting tracks of persons in the context of the Covid pandemic here</a>
+                </div>
+                <div class="w3-third w3-center">
+                    <a href="https://www.cybertec-postgresql.com/en/intersecting-tracks-of-individuals-mobilitydb/" target="_blank"><img class="covid" src="images/covid.jpg" alt="covid"></a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- Flèches de navigation -->
+    <i id="nav-gauche" class="las la-chevron-left"></i>
+    <i id="nav-droite" class="las la-chevron-right"></i>
+</div>
+</main>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-center w3-orange">
+    <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>,  <a href="https://www.freepik.com" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/turkkub" title="turkkub">turkkub</a>  from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</footer>
+
+<script src="js/scripts.js"></script>
+
+</body>
+
+</html>

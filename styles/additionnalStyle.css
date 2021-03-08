@@ -1,0 +1,59 @@
+body, h1, h2, h3, h4, h5, h6{
+    font-family: "Lato", sans-serif
+}
+
+.w3-bar, h1, button {
+    font-family: "Montserrat", sans-serif
+}
+
+.benefits {
+    width: 100%;
+}
+
+.usblogo, .sqllogo, .analyticslogo, .pythonlogo, .worldwidelogo, .elephantlogo {
+    width: 100px;
+}
+
+.benefits {
+    table-layout: fixed ;
+    width: 100% ;
+    border-spacing:0px 20px;
+}
+td {
+    width: 33% ;
+}
+
+.benefits-text-1.td.h5 {
+    font-weight: bold;
+}
+
+.mobdblogo {
+    width: 60%;
+}
+
+.mobdb-blue, .mobdb-hover-blue:hover {
+    color: #fff !important;
+    background-color: #5086B7 !important
+}
+
+.mobdb-orange, .mobdb-hover-orange:hover {
+    color: #000 !important;
+    background-color: #ED6332 !important
+}
+
+.sqlquery {
+    height: 150px;
+    width: 450px;
+    border: 1px solid black;
+}
+
+.sqlresponse {
+    height: 150px;
+    width: 450px;
+    border: 1px solid black;
+}
+
+.pgconf2020presentation, .taxi, .covid{
+    width: 400px;
+}
+
