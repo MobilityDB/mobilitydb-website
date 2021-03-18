@@ -14,13 +14,14 @@ body, h1, h2, h3, h4, h5, h6{
     width: 100px;
 }
 
-.benefits {
+.benefits, .doclink {
     table-layout: fixed ;
     width: 100% ;
     border-spacing: 20px;
 }
 td {
     width: 33% ;
+
 }
 
 .benefits-text-1.td.h5 {
@@ -35,6 +36,15 @@ td {
     color: #fff !important;
     background-color: #5086B7 !important
 }
+
+.w3-code-override {
+    width: auto;
+    background-color: #fff;
+    padding: 8px 12px;
+    border-left: 4px solid #ED6332 ;
+    word-wrap: break-word
+}
+
 
 .mobdb-orange, .mobdb-hover-orange:hover {
     color: #000 !important;
