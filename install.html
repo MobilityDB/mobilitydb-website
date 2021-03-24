@@ -16,14 +16,29 @@
 <link rel="stylesheet" href="styles/styles.css">
 
 <body>
+
+
+<!-- sidebar -->
+<div class="w3-sidebar w3-bar-block w3-padding-top-64 mobdb-blue w3-padding-bot-32" style="width:15%">
+    <h4><a href="#linux" class="w3-bar-item w3-button">Linux</a></h4>
+    <ul>
+        <li><a href="#requirements" class="w3-bar-item w3-button">Requirements</a></li>
+        <li><a href="#buidling-installation" class="w3-bar-item w3-button">Building & Installation</a></li>
+    </ul>
+    <h4><a href="#windows" class="w3-bar-item w3-button">Windows</a></h4>
+    <h4><a href="#docker" class="w3-bar-item w3-button">Docker</a></h4>
+</div>
+
+
+
 <!-- Navbar -->
 <div class="w3-top">
     <div class="w3-bar w3-orange w3-card w3-left-align w3-large">
         <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
            href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
                 class="fa fa-bars"></i></a>
-        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-        <a href="publications.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Publications</a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+        <a href="publications.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">The Project</a>
         <a href="documentation.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Documentation</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Installation</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorial</a>
@@ -39,16 +54,18 @@
     </div>
 </div>
 
+<div style="margin-left:15%">
+
 <!--LINUX  -->
 <div class="w3-row-padding w3-padding-top-64 w3-container w3-light-grey">
     <div class="w3-content">
         <div class="w3-margin-right">
-            <h1>Linux</h1>
+            <h1 id="linux">Linux</h1>
             <!--LINUX Requirements  -->
             <div class="w3-row-padding w3-container">
                 <div class="w3-content">
                     <div class="w3-margin-right">
-                        <h2>Requirements :</h2>
+                        <h2 id="requirements">Requirements :</h2>
 
                         <ul>
                             <li>PostgreSQL > 10</li>
@@ -76,7 +93,7 @@
             <div class="w3-row-padding w3-padding-top-64 w3-container">
                 <div class="w3-content">
                     <div class="w3-margin-right">
-                        <h2>Building & Installation :</h2>
+                        <h2 id="buidling-installation">Building & Installation :</h2>
 
                         <div class="w3-panel w3-card w3-light-grey">
                             <p>Here is the gist :</p>
@@ -111,7 +128,7 @@
 <div class="w3-row-padding w3-padding-top-64 w3-container">
     <div class="w3-content">
         <div class="w3-margin-right">
-            <h1>Windows : </h1>
+            <h1 id="windows">Windows : </h1>
             <p>Coming Soon</p>
 
         </div>
@@ -123,14 +140,26 @@
 <div class="w3-row-padding w3-padding-top-64 w3-container w3-light-grey">
     <div class="w3-content">
         <div class="w3-margin-right">
-            <h1>Docker Container :</h1>
+            <h1 id="docker">Docker Container :</h1>
             <div class="w3-row-padding w3-container">
                 <div class="w3-content">
                     <div class="w3-margin-right">
-                        <p>Docker containers with MobilityDB and all its dependencies are available here. These images
+                        <p>Docker containers with MobilityDB and all its dependencies are available <a href="https://github.com/MobilityDB/MobilityDB-docker" target="_blank" >here</a>. These images
                             are based on
-                            the official Postgres and Postgis docker images, please refer to them for more
+                            the official <a href="https://github.com/docker-library/postgres" target="_blank">Postgres</a> and <a href="https://github.com/postgis/docker-postgis" target="_blank">Postgis</a> docker images, please refer to them for more
                             information.</p>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <p>If you have docker installed in your system you can run:</p>
+                            <div class="w3-code-override notranslate">
+                                docker pull mobilitydb/mobilitydb<br>
+                                docker volume create mobilitydb_data<br>
+                                docker run --name "mobilitydb" -d -p 25432:5432 -v mobilitydb_data:/var/lib/postgresql mobilitydb/mobilitydb<br>
+                                psql -h localhost -p 25432 -d mobilitydb -U docker<br>
+                            </div>
+                            <br>
+                        </div>
+                        <p>The first command is to download the latest most up-to-date image of MobilityDB. The second command creates a volume container on the host, that we will use to persist the PostgreSQL database files outside of the MobilityDB container. The third command executes this binary image of PostgreSQL, PostGIS, and MobilityDB with the TCP port 5432 in the container mapped to port 25432 on the Docker host (user = pw = docker, db = mobilitydb). The fourth command is to connect to the database using psql.
+                        </p>
 
                     </div>
                 </div>
@@ -140,10 +169,14 @@
     </div>
 </div>
 
+</div>
+
 </body>
 
+
+
 <!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-center w3-orange">
+<footer class="w3-container w3-padding-32 w3-center w3-orange w3-footer">
     <div class="w3-xlarge w3-padding-32">
         <i class="fa fa-facebook-official w3-hover-opacity"></i>
         <i class="fa fa-instagram w3-hover-opacity"></i>
