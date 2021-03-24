@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Tutorial</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Fichiers CSS additionnel-->
+<link rel="stylesheet" href="styles/additionnalStyle.css">
+<!-- Fichiers CSS slideShadow-->
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-orange w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        <a href="publications.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">The Project</a>
+        <a href="documentation.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Documentation</a>
+        <a href="install.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Installation</a>
+        <a href="Tutorials.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Tutorials</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+    </div>
+</div>
+
+
+<!-- UMobilityDB Workshop -->
+<div class="w3-row-padding w3-padding-top-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-margin-right">
+            <h1>MobilityDB Workshop </h1>
+            <p>Every module in this workshop illustrates a usage scenario of MobilityDB. The data sets and the tools are described inside each of the modules.</p>
+        </div>
+        <table class="doclink">
+            <tr>
+                <td class="w3-center"><a class="w3-button mobdb-blue w3-padding-large w3-block" href="https://docs.mobilitydb.com/MobilityDB-workshop/master/" target="_blank">HTML</a></td>
+                <td class="w3-center"><a class="w3-button mobdb-blue w3-padding-large w3-block" href="https://docs.mobilitydb.com/MobilityDB-workshop/master/mobilitydb-workshop.pdf" target="_blank">PDF</a></td>
+                <td class="w3-center"><a class="w3-button mobdb-blue w3-padding-large w3-block" href="https://docs.mobilitydb.com/MobilityDB-workshop/master/mobilitydb-workshop.epub" target="_blank">EPUB</a></td>
+            </tr>
+        </table>
+        <p>Alternatively, if you stand in the "doc" folder, you can generate the user's manual from the sources :</p>
+        <div class="w3-panel w3-card w3-light-grey">
+            <h5>HTML</h5>
+            <div class="w3-code-override notranslate">
+                xsltproc --stringparam html.stylesheet "docbook.css" --xinclude -o index.html /usr/share/xml/docbook/stylesheet/docbook-xsl/html/chunk.xsl mobilitydb-workshop.xml<br>
+            </div>
+            <h5>PDF</h5>
+            <div class="w3-code-override notranslate">
+                dblatex -s texstyle.sty -T native -t pdf -o mobilitydb-workshop.pdf mobilitydb-workshop.xml<br>
+            </div>
+            <h5>EPUB</h5>
+            <div class="w3-code-override notranslate">
+                dbtoepub -o mobilitydb-workshop.epub mobilitydb-workshop.xml<br>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+<!-- Docker container -->
+<div class="w3-row-padding w3-padding-top-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-margin-right">
+            <h1>Docker container</h1>
+            <p>The workshop dependencies and data files are available in a Docker container running PostgreSQL-12, PostGIS-2.5 and MobilityDB-develop.</p>
+        </div>
+        <div class="w3-panel w3-card w3-light-grey">
+            <ul>
+                <li><p>Pull the prebuilt image from the Docker Hub Registry.</p></li>
+            <div class="w3-code-override notranslate">
+                docker pull mobilitydb/mobilitydb:12-2.5-develop-workshop
+            </div>
+                <li><p>Create a Docker volume to preserve the PostgreSQL database files outside of the container.</p></li>
+            <div class="w3-code-override notranslate">
+                docker volume create mobilitydb_data
+            </div>
+                <li><p>Run the Docker container.</p></li>
+            <div class="w3-code-override notranslate">
+                docker run --name "mobilitydb" -d -p 5432 -v mobilitydb_data:/var/lib/postgresql mobilitydb/mobilitydb:12-2.5-develop-workshop
+            </div>
+                <li><p>Enter into the Docker container</p></li>
+            <div class="w3-code-override notranslate">
+                docker exec -it mobilitydb bash
+            </div>
+                <li><p>Connect to the database (username=docker,db=mobilitydb).</p></li>
+            <div class="w3-code-override notranslate">
+                psql -U docker -d mobilitydb
+            </div>
+            <br>
+            <h5>The workshop data files are available in the workshop directory inside the container.</h5>
+            </ul>
+        </div>
+    </div>
+</div>>
+
+
+
+
+
+
+
+</body>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-center w3-orange">
+    <div class="w3-xlarge w3-padding-32">
+        <i class="fa fa-facebook-official w3-hover-opacity"></i>
+        <i class="fa fa-instagram w3-hover-opacity"></i>
+        <i class="fa fa-snapchat w3-hover-opacity"></i>
+        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+        <i class="fa fa-twitter w3-hover-opacity"></i>
+        <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a>,  <a href="https://www.freepik.com" title="Freepik">Freepik</a>, <a href="https://www.flaticon.com/authors/turkkub" title="turkkub">turkkub</a>  from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+</footer>
+
+
+</html>
