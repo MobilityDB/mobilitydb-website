@@ -37,21 +37,4 @@ function smallNav() {
     }
 }
 
-//hover current tab in navbar
-var path = window.location.pathname;
-var page = path.split("/").pop();
-var pagename = page.split(".")[0];
-var idname = "nav".concat(pagename);
-var tab = document.getElementById(idname);
-var tab = document.getElementById("navBar");
-console.log(tab);
-console.log(idname);
-tab.classList.add('w3-white');
-//
-function navremove() {
-    tab.classList.remove('w3-white');
-}
-
-this.onunload(navremove())
-
 
