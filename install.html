@@ -110,7 +110,6 @@
         <div class="w3-margin-right">
             <h1 id="windows">Windows : </h1>
             <p>Coming Soon</p>
-
         </div>
     </div>
 </div>
@@ -124,22 +123,35 @@
             <div class="w3-row-padding w3-container">
                 <div class="w3-content">
                     <div class="w3-margin-right">
-                        <p>Docker containers with MobilityDB and all its dependencies are available <a href="https://github.com/MobilityDB/MobilityDB-docker" target="_blank" >here</a>. These images
+                        <h5>Docker containers with MobilityDB and all its dependencies are available <a href="https://github.com/MobilityDB/MobilityDB-docker" target="_blank" >here</a>. These images
                             are based on
                             the official <a href="https://github.com/docker-library/postgres" target="_blank">Postgres</a> and <a href="https://github.com/postgis/docker-postgis" target="_blank">Postgis</a> docker images, please refer to them for more
-                            information.</p>
+                            information.</h5>
                         <div class="w3-panel w3-card w3-light-grey">
-                            <p>If you have docker installed in your system you can run:</p>
-                            <div class="w3-code-override notranslate">
-                                docker pull mobilitydb/mobilitydb<br>
-                                docker volume create mobilitydb_data<br>
-                                docker run --name "mobilitydb" -d -p 25432:5432 -v mobilitydb_data:/var/lib/postgresql mobilitydb/mobilitydb<br>
-                                psql -h localhost -p 25432 -d mobilitydb -U docker<br>
-                            </div>
-                            <br>
+                            <p>If you have docker installed in your system, follow those steps :</p>
+                                <ul>
+                                    <li><p>Download the latest most up-to-date image of MobilityDB</p></li>
+                                    <div class="w3-code-override notranslate">
+                                        docker pull mobilitydb/mobilitydb
+                                    </div>
+                                    <li><p>Create a volume container on the host, that we will use to persist the PostgreSQL
+                                        database files outside of the MobilityDB container.</p></li>
+                                    <div class="w3-code-override notranslate">
+                                        docker volume create mobilitydb_data
+                                    </div>
+                                    <li><p>Executes the binary image of PostgreSQL, PostGIS,
+                                        and MobilityDB with the TCP port 5432 in the container mapped to port 25432 on the Docker host
+                                        (user = pw = docker, db = mobilitydb)</p></li>
+                                    <div class="w3-code-override notranslate">
+                                        docker run --name "mobilitydb" -d -p 25432:5432 -v mobilitydb_data:/var/lib/postgresql mobilitydb/mobilitydb
+                                    </div>
+                                    <li><p>connect to the database using psql.</p></li>
+                                    <div class="w3-code-override notranslate">
+                                        dpsql -h localhost -p 25432 -d mobilitydb -U docker
+                                    </div>
+                                <br>
+                                </ul>
                         </div>
-                        <p>The first command is to download the latest most up-to-date image of MobilityDB. The second command creates a volume container on the host, that we will use to persist the PostgreSQL database files outside of the MobilityDB container. The third command executes this binary image of PostgreSQL, PostGIS, and MobilityDB with the TCP port 5432 in the container mapped to port 25432 on the Docker host (user = pw = docker, db = mobilitydb). The fourth command is to connect to the database using psql.
-                        </p>
 
                     </div>
                 </div>
