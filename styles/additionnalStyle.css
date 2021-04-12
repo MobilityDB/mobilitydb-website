@@ -19,9 +19,13 @@ body, h1, h2, h3, h4, h5, h6{
     width: 100% ;
     border-spacing: 20px;
 }
-td {
-    width: 33% ;
+.td-benefits {
+    width: 33%;
 
+}
+
+.td-footer {
+    width: 25%;
 }
 
 .benefits-text-1.td.h5 {
