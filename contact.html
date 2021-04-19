@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Title</title>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Fichiers CSS additionnel-->
+<link rel="stylesheet" href="styles/additionnalStyle.css">
+<!-- Fichiers CSS slideShadow-->
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+
+<!-- Navbar -->
+<div w3-include-html="navbar.html"></div>
+
+<body>
+
+
+<!-- Mailing List -->
+<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+    <div class="w3-content">
+        <div class="w3-margin-right">
+            <h2>Mailing Lists</h2>
+            <p>There are two mailing lists for MobilityDB hosted on OSGeo mailing list server:</p>
+            <ul>
+                <li>User mailing list: <a href="http://lists.osgeo.org/mailman/listinfo/mobilitydb-users">http://lists.osgeo.org/mailman/listinfo/mobilitydb-users</a> </li>
+                <li>Developer mailing list: <a href="http://lists.osgeo.org/mailman/listinfo/mobilitydb-dev">http://lists.osgeo.org/mailman/listinfo/mobilitydb-dev</a></li>
+            </ul>
+            <p class="w3-text-bold"><b>--> For general questions and topics about how to use MobilityDB, please write to the user mailing list.</b></p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Reporting Problems -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+        <div class="w3-margin-right">
+            <h2>Reporting Problems</h2>
+            <p>Bugs are reported and managed in an <a href="https://github.com/MobilityDB/MobilityDB/issues">issue tracker</a>. Please follow these steps:</p>
+            <ol>
+                <li>Search the tickets to see if your problem has already been reported. If so, add any extra context you might have found, or at least indicate that you too are having the problem. This will help us prioritize common issues.</li>
+                <li>If your problem is unreported, create a <a href="https://github.com/MobilityDB/MobilityDB/issues/new">new issue</a> for it.</li>
+                <li>In your report include explicit instructions to replicate your issue. The best tickets include the exact SQL necessary to replicate a problem. Please also, note the operating system and versions of MobilityDB, PostGIS, and PostgreSQL.</li>
+                <li>It is recommended to use the following wrapper on the problem to pin point the step that is causing the problem</li>
+                <div class="w3-panel w3-card w3-light-grey">
+                    <br>
+                    <div class="w3-code-override notranslate">
+                        SET client_min_messages TO debug;<br>
+                        &lt;your code><br>
+                        SET client_min_messages TO notice;
+                    </div>
+                    <br>
+                </div>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- Gitter -->
+<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+    <div class="w3-content">
+        <div class="w3-margin-right w3-twothird">
+            <h2>Gitter</h2>
+            <p>MobilityDB has a dedicated chat room on Gitter, feel free to join us !</p>
+            <ul>
+                <li>click "Open the chat" at the bottom right,</li>
+                <li>or use the <a href="https://gitter.im/MobilityDBProject/MobilityDB">webinterface</a>  </li>
+            </ul>
+        </div>
+    </div>
+    <div class="w3-third">
+       <a href="https://gitter.im/MobilityDBProject/MobilityDB"><img src="images/Gitter_logo.png" alt="gitter-logo"></a>
+    </div>
+</div>
+
+
+
+
+
+</body>
+
+
+
+<!-- Footer -->
+<div w3-include-html="footer.html"></div>
+
+
+<script src="js/includeHTML.js"></script>
+<script>includeHTML();</script>
+<script>
+    ((window.gitter = {}).chat = {}).options = {
+        room: 'MobilityDBProject/MobilityDB'
+    };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+</html>
