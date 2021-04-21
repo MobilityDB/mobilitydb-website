@@ -28,6 +28,7 @@ body, h1, h2, h3, h4, h5, h6{
 
 
 
+
 .td-benefits {
     width: 33%;
 
@@ -87,5 +88,14 @@ body, h1, h2, h3, h4, h5, h6{
 
 .footerlink {
     text-decoration: none;
+}
+
+
+.medaillelogo {
+    width: 20px;
+}
+
+.awardtxt {
+    font-weight: bold;
 }
 
