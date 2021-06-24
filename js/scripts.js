@@ -20,6 +20,8 @@ function carousel(sens=0) {
     }
 
     if (myIndex > x.length) {myIndex = 1}
+    if (myIndex <= 0) { myIndex = x.length}
+    console.log(myIndex)
     x[myIndex-1].style.display = "block";
     if (sens === 0) {setTimeout(carousel, 6000)}
     return true
