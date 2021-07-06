@@ -87,20 +87,38 @@
             <h1>Easy to Use</h1>
 
             <h5 class="w3-padding-32">MobilityDB provides two main geospatial trajectory type: tgeompoint for a temporal geometry point, and tgeogpoint for a temporal geography point. Both can represent a geospatial point that moves over time, where the coordinates are respectively expressed as PostGIS geometry or geography. It also provides a rich set of functions to manage these type; including: input/output, topological relationships, speed, direction, distance, etc.</h5>
-
-        <div class="" style="float: left">
-            <img class="sqlquery" src="images/sqlquery.png" alt="sqlquery">
         </div>
-        <div class="" style="float: right">
-            <img class="sqlresponse" src="images/sqlresponse.png" alt="sqlresponse">
+        <div class="textAreaLeft">
+            <div id="myTextareaQuery" ></div>
         </div>
+        <div class="textAreaRight">
+            <div id="myTextareaResponse" ></div>
+        </div>
+        <div class="w3-center">
             <a href="tutorials.html" class="w3-center w3-button w3-orange w3-padding-large w3-large w3-margin-top">Check out our Workshop</a>
         </div>
-
-
     </div>
-
 </div>
+
+<!-- Create a simple CodeMirror instance -->
+<script src="lib/codemirror.js"></script>
+<link rel="stylesheet" href="lib/codemirror.css">
+<script src="mode/sql/sql.js"></script>
+
+<script>
+    var myCodeMirror = CodeMirror(document.getElementById("myTextareaQuery"), {
+        value: "SELECT startTimestamp(trip) AS start, \nendTimestamp(trip) AS end \nFROM trips \nLIMIT 5;",
+        mode:  "sql",
+        lineNumbers: true,
+
+    });
+    var myCodeMirrorbis = CodeMirror(document.getElementById("myTextareaResponse"), {
+        value: "Lorem ipsum;",
+        mode:  "sql",
+        lineNumbers: true,
+    });
+</script>
+
 
 <!-- Docker  -->
 <div class="w3-container mobdb-blue w3-center  w3-padding-64">

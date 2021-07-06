@@ -99,3 +99,15 @@ body, h1, h2, h3, h4, h5, h6{
     font-weight: bold;
 }
 
+.textAreaLeft {
+    float: left;
+    width: 40%;
+    border: solid black 1px;
+}
+
+.textAreaRight {
+    float: right;
+    width: 40%;
+    border: solid black 1px;
+}
+
