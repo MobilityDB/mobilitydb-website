@@ -88,12 +88,33 @@
 
             <h5 class="w3-padding-32">MobilityDB provides two main geospatial trajectory type: tgeompoint for a temporal geometry point, and tgeogpoint for a temporal geography point. Both can represent a geospatial point that moves over time, where the coordinates are respectively expressed as PostGIS geometry or geography. It also provides a rich set of functions to manage these type; including: input/output, topological relationships, speed, direction, distance, etc.</h5>
         </div>
+        <table>
+            <tr>
+                <td class="cellquery">
+                    <div class="textAreaLeft">
+                        <div id="myTextareaQuery" ></div>
+                    </div>
+                </td>
+                <td>
+                    <img class="cellfleche" src="images/right-arrow.svg" alt="arrow">
+                </td>
+                <td class="cellresponse">
+                    <div class="textAreaRight">
+                        <div id="myTextareaResponse" ></div>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        <!--
         <div class="textAreaLeft">
             <div id="myTextareaQuery" ></div>
         </div>
         <div class="textAreaRight">
             <div id="myTextareaResponse" ></div>
         </div>
+        -->
+
         <div class="w3-center">
             <a href="tutorials.html" class="w3-center w3-button w3-orange w3-padding-large w3-large w3-margin-top">Check out our Workshop</a>
         </div>
@@ -113,9 +134,16 @@
 
     });
     var myCodeMirrorbis = CodeMirror(document.getElementById("myTextareaResponse"), {
-        value: "Lorem ipsum;",
+        value: " START                         | END               \n" +
+            " (timestamp with time zone)    | (timestamp with time zone)             \n" +
+            "-------------------------------+--------------------------------\n" +
+            " 2020-06-01 09:00:47.886+02    |   2020-06-01 09:46:42.031692+02\n" +
+            " 2020-06-01 16:42:53.192+02    |   2020-06-01 17:23:28.350813+02\n" +
+            " 2020-06-01 21:25:10.562+02    |   2020-06-01 21:37:14.920128+02\n" +
+            " 2020-06-01 08:10:59.002+02    |   2020-06-01 08:12:31.179416+02\n" +
+            " 2020-06-01 22:15:40.545128+02 |   2020-06-01 22:25:18.204499+02",
         mode:  "sql",
-        lineNumbers: true,
+        lineNumbers: false,
     });
 </script>
 
