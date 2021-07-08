@@ -90,15 +90,15 @@
         </div>
         <table>
             <tr>
-                <td class="cellquery">
+                <td class="td-usecase">
                     <div class="textAreaLeft">
                         <div id="myTextareaQuery" ></div>
                     </div>
                 </td>
-                <td>
+                <td class="td-usecase">
                     <img class="cellfleche" src="images/right-arrow.svg" alt="arrow">
                 </td>
-                <td class="cellresponse">
+                <td class="td-usecase">
                     <div class="textAreaRight">
                         <div id="myTextareaResponse" ></div>
                     </div>
@@ -121,31 +121,6 @@
     </div>
 </div>
 
-<!-- Create a simple CodeMirror instance -->
-<script src="lib/codemirror.js"></script>
-<link rel="stylesheet" href="lib/codemirror.css">
-<script src="mode/sql/sql.js"></script>
-
-<script>
-    var myCodeMirror = CodeMirror(document.getElementById("myTextareaQuery"), {
-        value: "SELECT startTimestamp(trip) AS start, \nendTimestamp(trip) AS end \nFROM trips \nLIMIT 5;",
-        mode:  "sql",
-        lineNumbers: true,
-
-    });
-    var myCodeMirrorbis = CodeMirror(document.getElementById("myTextareaResponse"), {
-        value: " START                         | END               \n" +
-            " (timestamp with time zone)    | (timestamp with time zone)             \n" +
-            "-------------------------------+--------------------------------\n" +
-            " 2020-06-01 09:00:47.886+02    |   2020-06-01 09:46:42.031692+02\n" +
-            " 2020-06-01 16:42:53.192+02    |   2020-06-01 17:23:28.350813+02\n" +
-            " 2020-06-01 21:25:10.562+02    |   2020-06-01 21:37:14.920128+02\n" +
-            " 2020-06-01 08:10:59.002+02    |   2020-06-01 08:12:31.179416+02\n" +
-            " 2020-06-01 22:15:40.545128+02 |   2020-06-01 22:25:18.204499+02",
-        mode:  "sql",
-        lineNumbers: false,
-    });
-</script>
 
 
 <!-- Docker  -->
@@ -237,6 +212,31 @@
     ((window.gitter = {}).chat = {}).options = {
         room: 'MobilityDBProject/MobilityDB'
     };
+</script>
+<!-- Create a simple CodeMirror instance -->
+<script src="lib/codemirror.js"></script>
+<link rel="stylesheet" href="lib/codemirror.css">
+<script src="mode/sql/sql.js"></script>
+
+<script>
+    var myCodeMirror = CodeMirror(document.getElementById("myTextareaQuery"), {
+        value: "SELECT startTimestamp(trip) AS start, \nendTimestamp(trip) AS end \nFROM trips \nLIMIT 5;",
+        mode:  "sql",
+        lineNumbers: true,
+
+    });
+    var myCodeMirrorbis = CodeMirror(document.getElementById("myTextareaResponse"), {
+        value: " START                         | END               \n" +
+            " (timestamp with time zone)    | (timestamp with time zone)             \n" +
+            "-------------------------------+--------------------------------\n" +
+            " 2020-06-01 09:00:47.886+02    |   2020-06-01 09:46:42.031692+02\n" +
+            " 2020-06-01 16:42:53.192+02    |   2020-06-01 17:23:28.350813+02\n" +
+            " 2020-06-01 21:25:10.562+02    |   2020-06-01 21:37:14.920128+02\n" +
+            " 2020-06-01 08:10:59.002+02    |   2020-06-01 08:12:31.179416+02\n" +
+            " 2020-06-01 22:15:40.545128+02 |   2020-06-01 22:25:18.204499+02",
+        mode:  "sql",
+        lineNumbers: false,
+    });
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <script>includeHTML();</script>
