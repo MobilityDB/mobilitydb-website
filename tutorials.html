@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
-<title>Tutorial</title>
+<title>Tutorials</title>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -70,7 +70,7 @@
             </div>
                 <li><p>Run the Docker container.</p></li>
             <div class="w3-code-override notranslate">
-                docker run --name "mobilitydb" -d -p 5432 -v mobilitydb_data:/var/lib/postgresql mobilitydb/mobilitydb:12-2.5-develop-workshop
+                docker run --name "mobilitydb" -d -p 25432:5432 -v mobilitydb_data:/var/lib/postgresql mobilitydb/mobilitydb
             </div>
                 <li><p>Enter into the Docker container</p></li>
             <div class="w3-code-override notranslate">
@@ -78,7 +78,7 @@
             </div>
                 <li><p>Connect to the database (username=docker,db=mobilitydb).</p></li>
             <div class="w3-code-override notranslate">
-                psql -U docker -d mobilitydb
+                psql -h localhost -p 25432 -d mobilitydb -U docker
             </div>
             <br>
             <h5>The workshop data files are available in the workshop directory inside the container.</h5>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Install</title>
+<title>Installation</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Fichiers CSS W3-->
@@ -54,15 +54,14 @@
                             <li>PostGIS == 2.5</li>
                             <li>JSON-C</li>
                             <li>GNU Scientific Library (GSL)</li>
-                            <li>Development files for PostgreSQL, PostGIS/liblwgeom, PROJ & JSON-C</li>
+                            <li>Development files for PostgreSQL, PostGIS/liblwgeom, PROJ & JSON-C, Protobuf-C</li>
                         </ul>
 
                         <div class="w3-panel w3-card w3-light-grey">
                             <p>For example, you can build the following command to install all MobilityDB build
                                 dependencies for Debian-based systems:</p>
                             <div class="w3-code-override notranslate">
-                                apt install build-essential cmake postgresql-server-dev-11 liblwgeom-dev libproj-dev
-                                libjson-c-dev
+                                apt install build-essential cmake postgresql-server-dev-11 liblwgeom-dev libproj-dev libjson-c-dev libprotobuf-c-dev
                             </div>
                             <br>
                         </div>
@@ -148,7 +147,7 @@
                                     </div>
                                     <li><p>connect to the database using psql.</p></li>
                                     <div class="w3-code-override notranslate">
-                                        dpsql -h localhost -p 25432 -d mobilitydb -U docker
+                                        psql -h localhost -p 25432 -d mobilitydb -U docker
                                     </div>
                                 <br>
                                 </ul>
