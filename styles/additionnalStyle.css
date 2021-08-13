@@ -11,7 +11,9 @@ body, h1, h2, h3, h4, h5, h6{
 }
 
 .usblogo, .sqllogo, .analyticslogo, .pythonlogo, .worldwidelogo, .elephantlogo {
-    width: 100px;
+    width: 100%;
+    max-width: 100px;
+    height: auto;
 }
 
 .githublogo {
@@ -121,6 +123,10 @@ body, h1, h2, h3, h4, h5, h6{
 
 .sidebartitle {
     padding-top: 20%;
+}
+
+.maintitle {
+    font-size:7vw;
 }
 
 @media (max-width: 1200px) {
