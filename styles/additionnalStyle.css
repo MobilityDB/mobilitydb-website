@@ -10,7 +10,7 @@ body, h1, h2, h3, h4, h5, h6{
     width: 100%;
 }
 
-.usblogo, .sqllogo, .analyticslogo, .pythonlogo, .worldwidelogo, .elephantlogo {
+.usblogo, .sqllogo, .analyticslogo, .pythonlogo, .worldwidelogo, .elephantlogo, .osgeologo, .ogclogo {
     width: 100%;
     max-width: 100px;
     height: auto;
@@ -43,7 +43,7 @@ body, h1, h2, h3, h4, h5, h6{
 }
 
 .td-footer {
-    width: 25%;
+    width: 33%;
 }
 
 .benefits-text-1.td.h5 {
@@ -90,9 +90,6 @@ body, h1, h2, h3, h4, h5, h6{
     width: 400px;
 }
 
-.ogclogo {
-    width: 150px;
-}
 
 .footerlink {
     text-decoration: none;
