@@ -16,18 +16,34 @@ body, h1, h2, h3, h4, h5, h6{
     height: auto;
 }
 
+.andonmologo, .ulblogo, .georeplogo, .innologo, .fnrslogo, .eucologo {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.fnrslogo{
+    width: 100%;
+    max-height: 75px;
+    height: auto;
+}
+
 .githublogo {
     width: 30px;
     padding-right: 7px;
 }
 
 
-.benefits, .doclink, .usecase {
+.td-sponsors {
+    font-size: 23px;
+}
+
+
+.benefits, .doclink, .usecase, .sponsors {
     table-layout: fixed ;
     width: 100% ;
     border-spacing: 20px;
 }
-
 
 .td-benefits {
     width: 33%;
@@ -91,7 +107,7 @@ body, h1, h2, h3, h4, h5, h6{
 }
 
 
-.footerlink {
+.footerlink, .sponsorslink{
     text-decoration: none;
 }
 
