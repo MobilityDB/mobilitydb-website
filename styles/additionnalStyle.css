@@ -16,26 +16,22 @@ body, h1, h2, h3, h4, h5, h6{
     height: auto;
 }
 
-.andonmologo, .ulblogo, .georeplogo, .innologo, .fnrslogo, .eucologo {
+.andonmologo, .ulblogo, .georeplogo, .innologo, .fnrslogo, .eucologo, .mobiwavelogo {
     width: 100%;
     max-width: 200px;
     height: auto;
 }
 
-.fnrslogo{
+.dedslogo, .bdmalogo, .fnrslogo {
     width: 100%;
-    max-height: 75px;
+    max-width: 100px;
     height: auto;
 }
+
 
 .githublogo {
     width: 30px;
     padding-right: 7px;
-}
-
-
-.td-sponsors {
-    font-size: 23px;
 }
 
 
