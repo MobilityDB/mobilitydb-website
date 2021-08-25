@@ -25,10 +25,20 @@
     <div class="w3-content">
         <div style="overflow-x:auto;">
             <h1 class="w3-center w3-padding-32">Publications</h1>
-            <p>The core development of MobilityDB is done by a team of academics in Université libre de Bruxelles, Belgium. The main ideas, including the type system, the algorithms, and the API design have been validated by the scientific community in multiple peer reviewed publications.
-            </p>
-            <p>Most of those publications are listed below :</p>
 
+            <!-- Citing MobilityDB -->
+            <div class="w3-container">
+                <!-- The button used to copy the text -->
+                <h3>Citing MobilityDB : </h3>
+                <button class="w3-button mobdb-blue" id="buttonACM" onclick="ClipboardFill('ACM')" onmouseout="fadeout('ACM')">ACM</button>
+                <button class="w3-button mobdb-blue" id="buttonBiBTeX" onclick="ClipboardFill('BiBTeX')" onmouseout="fadeout('BiBTeX')">BiBTeX</button>
+            </div>
+
+            <div class="w3-container w3-padding-32">
+                <p>The core development of MobilityDB is done by a team of academics in Université libre de Bruxelles, Belgium. The main ideas, including the type system, the algorithms, and the API design have been validated by the scientific community in multiple peer reviewed publications.
+                </p>
+                <p>Most of those publications are listed below :</p>
+            </div>
             <table class="w3-table w3-striped w3-bordered">
                 <tr class="mobdb-blue">
                     <th>Venue</th>
@@ -220,6 +230,7 @@
 
 </body>
 <script src="js/includeHTML.js"></script>
+<script src="js/buttons.js"></script>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'MobilityDBProject/MobilityDB'
