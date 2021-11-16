@@ -91,12 +91,14 @@
                     <td></td>
                 </tr>
             </table>
-        <p>Alternatively, if you are in the root directory of MobilityDB you can generate the developer's documentation from the source files as follows:</p>
+        <p>Alternatively, you can generate the English developer's documentation in HTML format.</p>
         <div class="w3-panel w3-card w3-light-grey">
-            <br>
+            <p>For this, it is necessary to add the option DOC_DEV in the cmake command as follows:</p>
             <div class="w3-code-override notranslate">
-                doxygen Doxyfile
+                cmake -D DOC_DEV=true ..<br>
+                make doc_dev
             </div>
+            <p>The resulting HTML documentation will be generated in the doxygen directory of the build directory.</p>
             <br>
     </div>
 </div>
