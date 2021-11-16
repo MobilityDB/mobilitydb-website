@@ -43,20 +43,35 @@
 
             </table>
 
-        <p>Alternatively, if you stand in the "doc" folder, you can generate the user's manual from the sources :</p>
+
+
+        <p>Alternatively, you can generate the user's manual in HTML, PDF, and EPUB formats.</p>
+
         <div class="w3-panel w3-card w3-light-grey">
-            <h5>HTML</h5>
-            <div class="w3-code-override notranslate">
-                xsltproc --stringparam html.stylesheet "docbook.css" --xinclude -o index.html /usr/share/xml/docbook/stylesheet/docbook-xsl/html/chunk.xsl mobilitydb-manual.xml<br>
+            <p> The manual is generated in English and in other available languages (currently only Spanish). For this, it is necessary to specify appropriate options in the <code>cmake</code> command as follows:
+            <div class="w3-code-override">
+            <ul dir="auto">
+                <li><code style="background-color: lightgray">DOC_ALL</code>: Generate in HTML, PDF, and EPUB formats</li>
+                <li><code style="background-color: lightgray">DOC_HTML</code>: Generate in HTML format</li>
+                <li><code style="background-color: lightgray">DOC_PDF</code>: Generate in PDF format</li>
+                <li><code style="background-color: lightgray">DOC_EPUB</code>: Generate in EPUB format</li>
+                <li><code style="background-color: lightgray">LANG_ALL</code>: Generate in all available languages</li>
+                <li><code style="background-color: lightgray">ES</code>: Generate the Spanish documentation</li>
+            </ul>
             </div>
-            <h5>PDF</h5>
-            <div class="w3-code-override notranslate">
-                dblatex -s texstyle.sty mobilitydb-manual.xml<br>
+            <p dir="auto">For example, the following command generates the documentation in all formats and in all languages.</p>
+            <div class="w3-code-override">
+                cmake -D DOC_ALL=true -D LANG_ALL=true ..
             </div>
-            <h5>EPUB</h5>
-            <div class="w3-code-override notranslate">
-                dbtoepub -o mobilitydb-manual.epub mobilitydb-manual.xml<br>
+
+
+            <p dir="auto">As another example, the following command generates the English documentation in PDF.</p>
+            <div class="w3-code-override">
+                cmake -D DOC_PDF=true ..<br>
+                make doc
             </div>
+            <p dir="auto">The resulting documentation will be generated in the <code>doc</code> directory of the build directory.</p>
+
             <br>
         </div>
     </div>
