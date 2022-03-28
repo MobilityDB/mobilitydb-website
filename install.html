@@ -54,12 +54,12 @@
                         <h2 id="requirements">Requirements :</h2>
 
                         <ul>
-                            <li>PostgreSQL > 10</li>
-                            <li>CMake >= 3.1</li>
-                            <li>PostGIS == 2.5</li>
+                            <li>PostgreSQL >= 11</li>
+                            <li>CMake >= 3.7</li>
+                            <li>PostGIS >= 2.5</li>
                             <li>JSON-C</li>
                             <li>GNU Scientific Library (GSL)</li>
-                            <li>Development files for PostgreSQL, PostGIS/liblwgeom, PROJ & JSON-C, Protobuf-C</li>
+                            <li>Development files for PostgreSQL, PostGIS/liblwgeom, PROJ, JSON-C</li>
                         </ul>
 
                         <div class="w3-panel w3-card w3-light-grey">
@@ -81,7 +81,7 @@
                         <h2 id="buidling-installation">Building & Installation :</h2>
 
                         <div class="w3-panel w3-card w3-light-grey">
-                            <p>Here is the gist :</p>
+                            <p>Here is the gist:</p>
                             <div class="w3-code-override notranslate">
                                 git clone https://github.com/MobilityDB/MobilityDB<br>
                                 mkdir MobilityDB/build<br>
@@ -89,18 +89,46 @@
                                 cmake ..<br>
                                 make<br>
                                 sudo make install<br>
-                                psql -c 'CREATE EXTENSION MobilityDB CASCADE'<br>
+                            </div>
+                            <p>
+                              The above commands install the master branch. If you want to install another branch, for example, develop, you can replace the first command above as follows:
+                            </p>
+                            <div class="w3-code-override notranslate">
+                                git clone --branch develop https://github.com/MobilityDB/MobilityDB<br>
                             </div>
                             <br>
                         </div>
 
                         <div class="w3-panel w3-card w3-light-grey">
-                            <p>You should also set the following in postgresql.conf :</p>
+                            <p>You should also set the following in the file postgresql.conf depending on the version of PostGIS you have installed (below we use PostGIS 3):</p>
                             <div class="w3-code-override notranslate">
-                                shared_preload_libraries = 'postgis-2.5'<br>
+                                shared_preload_libraries = 'postgis-3'<br>
                                 max_locks_per_transaction = 128<br>
                             </div>
-                            <br>
+                            <p>You can replace 'postgis-2.5' above if you want to use PostGIS 2.5.</p>
+                            <p>If you do not preload the PostGIS library you will not be able to load the MobilityDB library and will get an error message such as the following one:</p>
+                            <div class="w3-code-override notranslate">
+                                ERROR:  could not load library "/usr/local/pgsql/lib/libMobilityDB-1.0.so": undefined symbol: ST_Distance<br>
+                            </div>
+                            <p>Notice that you can find the location of the postgresql.conf file as given next</p>
+                            <div class="w3-code-override notranslate">
+                                $ which postgres<br>
+                                /usr/local/pgsql/bin/postgres<br>
+                                $ ls /usr/local/pgsql/data/postgresql.conf<br>
+                                /usr/local/pgsql/data/postgresql.conf<br>
+                            </div>
+                            <p>As can be seen, the PostgreSQL binaries are in the bin subdirectory while the postgresql.conf file is in the data subdirectory.</p>
+                        </div>
+
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <p>
+                              Once MobilityDB is installed, it needs to be enabled in each database you want to use it in. In the example below we use a database named mobility.
+                            </p>
+                            <div class="w3-code-override notranslate">
+                                createdb mobility<br>
+                                psql mobility -c "CREATE EXTENSION PostGIS"<br>
+                                psql mobility -c "CREATE EXTENSION MobilityDB"<br>
+                            </div>
                         </div>
                     </div>
                 </div>
