@@ -6,17 +6,17 @@ body, h1, h2, h3, h4, h5, h6{
     font-family: "Montserrat", sans-serif
 }
 
-.benefits {
+.benefits, .users {
     width: 100%;
 }
 
-.usblogo, .sqllogo, .analyticslogo, .pythonlogo, .worldwidelogo, .elephantlogo, .osgeologo, .ogclogo {
+.usblogo, .sqllogo, .analyticslogo, .pythonlogo, .worldwidelogo, .elephantlogo, .osgeologo, .ogclogo, .moscowtransportlogo, .otplogo, .sytyiologo {
     width: 100%;
     max-width: 100px;
     height: auto;
 }
 
-.andonmologo, .ulblogo, .georeplogo, .innologo, .fnrslogo, .eucologo, .mobiwavelogo {
+.andonmologo, .ulblogo, .georeplogo, .innologo, .fnrslogo, .eucologo, .mobiwavelogo, .cyberteclogo {
     width: 100%;
     max-width: 200px;
     height: auto;
@@ -35,7 +35,7 @@ body, h1, h2, h3, h4, h5, h6{
 }
 
 
-.benefits, .doclink, .usecase, .sponsors {
+.benefits, .doclink, .usecase, .sponsors, .users {
     table-layout: fixed ;
     width: 100% ;
     border-spacing: 20px;
@@ -43,6 +43,10 @@ body, h1, h2, h3, h4, h5, h6{
 
 .td-benefits {
     width: 33%;
+}
+
+.td-userslogo {
+    width: 20%;
 }
 
 .td-usecase-arrow {
