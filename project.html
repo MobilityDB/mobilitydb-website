@@ -21,7 +21,7 @@
 <div w3-include-html="navbar.html"></div>
 
 <!-- The Project -->
-<div class="w3-row-padding w3-padding-top-64 w3-container w3-light-grey">
+<div class="w3-row-padding w3-padding-top-64 w3-container">
   <div class="w3-content">
 
     <h1 class="w3-center">The Project</h1>
@@ -42,8 +42,47 @@
   </div>
 </div>
 
+<!-- The Ecosystem -->
+
+<div class="w3-row-padding w3-padding-32 w3-container w3-light-grey">
+  <div class="w3-content">
+    <h1 class="w3-center">The Ecosystem</h1>
+    <br>
+    <br>
+      <div id="logo-grid">
+        <div class="partner-logo"><a href="https://www.bayer.com" target="_blank"><img src="images/aws.png"  alt="aws"/></a></div>
+        <div class="partner-logo"><a href="https://www.bayer.com" target="_blank"><img src="images/azure.png"  alt="azure"/></a></div>
+        <div class="partner-logo"><a href="http://www.columbia.edu" target="_blank"><img src="images/geoserver.png"  alt="geoserver"/></a></div>
+        <div class="partner-logo"><a href="https://www.lilly.com" target="_blank"><img src="images/google_cloud.png"  alt="google cloud"/></a></div>
+        <div class="partner-logo"><a href="http://www.emdserono.com" target="_blank"><img src="images/grafana.png"  alt="grafana"/></a></div>
+        <div class="partner-logo"><a href="http://www.janssen.com" target="_blank"><img src="images/kafka.png"  alt="kafka"/></a></div>
+        <div class="partner-logo"><a href="https://mellon.org" target="_blank"><img src="images/kepler.gl-logo.png"  alt="kepler"/></a></div>
+        <div class="partner-logo"><a href="https://www.moore.org" target="_blank"><img src="images/kubernetes.png"  alt="kubernetes"/></a></div>
+        <div class="partner-logo"><a href="https://www.nih.gov" target="_blank"><img src="images/macos.png"  alt="macos"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/mapbox.png"  alt="mapbox"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/openlayers.png"  alt="openlayers"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/otp.png"  alt="otp"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/plotly.png"  alt="plotly"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/trio.png"  alt="trio"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/qgis.png"  alt="qgis"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/citus-data.png"  alt="citus-data"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/docker.webp"  alt="docker"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/psycopg.png"  alt="psycopg"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/pgrouting.png"  alt="pgrouting"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/java.png"  alt="java"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/python.png"  alt="python"/></a></div>
+        <div class="partner-logo" ><a href="https://www.nih.gov" target="_blank"> <img src="images/ubuntu.png"  alt="ubuntu"/></a></div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
 <!-- The Steering committee -->
-<div class="w3-row-padding w3-padding-32 w3-container w3-white">
+<div class="w3-row-padding w3-padding-32 w3-container">
   <div class="w3-content">
     <div class="w3-margin-right">
       <h3>The Steering Committee</h3>
@@ -179,9 +218,25 @@
 </body>
 <script src="js/includeHTML.js"></script>
 <script>
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  var element = document.getElementById("logo-grid");
+  for (var i = element.children.length; i >= 0; i--) {
+    element.appendChild(element.children[Math.random() * i | 0]);
+  }
+
+
   ((window.gitter = {}).chat = {}).options = {
     room: 'MobilityDBProject/MobilityDB'
   };
+
+
+
+
+
 </script>
 <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 <script>includeHTML();</script>
