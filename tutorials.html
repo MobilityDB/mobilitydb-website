@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tutorials</title>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -8,10 +9,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Fichiers CSS additionnel-->
-<link rel="stylesheet" href="styles/additionnalStyle.css">
+<link rel="stylesheet" href="styles/additionnalStyle.css?v=<?= filemtime('styles/additionnalStyle.css') ?>">
 <!-- Fichiers CSS slideShadow-->
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 <link rel="stylesheet" href="styles/styles.css">
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" href="images/mobilitydb-favicon.png"/>
 
 <body>
 <!-- Navbar -->
@@ -52,7 +55,7 @@
 </div>
 
 <!-- Docker container -->
-<div id="test" class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
     <div class="w3-content">
         <div class="w3-margin-right">
             <h1>Docker container</h1>

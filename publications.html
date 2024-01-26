@@ -9,10 +9,12 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Fichiers CSS additionnel-->
-<link rel="stylesheet" href="styles/additionnalStyle.css">
+<link rel="stylesheet" href="styles/additionnalStyle.css?v=<?= filemtime('styles/additionnalStyle.css') ?>">
 <!-- Fichiers CSS slideShadow-->
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 <link rel="stylesheet" href="styles/styles.css">
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" href="images/mobilitydb-favicon.png"/>
 
 <body>
 <!-- Navbar -->
@@ -21,71 +23,107 @@
 <!-- Publications -->
 <div class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
-        <div class="">
+        <div style="overflow-x:auto;">
             <h1 class="w3-center w3-padding-32">Publications</h1>
-            <p>The core development of MobilityDB is done by a team of academics in Université libre de Bruxelles, Belgium. The main ideas, including the type system, the algorithms, and the API design have been validated by the scientific community in multiple peer reviewed publications.
-            </p>
-            <p>Most of those publications are listed below :</p>
+            <!-- Citing MobilityDB -->
+            <div class="w3-container">
+                <!-- The button used to copy the text -->
+                <h3>Citing MobilityDB : </h3>
+                <div class="w3-panel w3-card w3-light-grey">
+                    <br>
+                    <div class="w3-code-override notranslate">
 
+                        Esteban Zimányi, Mahmoud Sakr, and Arthur Lesuisse. 2020. MobilityDB: A Mobility Database Based on PostgreSQL and PostGIS. <i>ACM Trans. Database Syst.</i> 45, 4, Article 19 (December 2020) DOI:<a target="_blank" href="https://doi.org/10.1145/3406534">https://doi.org/10.1145/3406534</a>
+
+                    </div>
+                    <br>
+                </div>
+                <p>ACM and BiBTex code :</p>
+
+                <button class="w3-button mobdb-blue" id="buttonACM" onclick="ClipboardFill('ACM')" onmouseout="fadeout('ACM')">ACM</button>
+                <button class="w3-button mobdb-blue" id="buttonBiBTeX" onclick="ClipboardFill('BiBTeX')" onmouseout="fadeout('BiBTeX')">BiBTeX</button>
+            </div>
+
+
+            <div class="w3-container w3-padding-32">
+                <br>
+                <p>The core development of MobilityDB is done by a team of academics in Université libre de Bruxelles, Belgium. The main ideas, including the type system, the algorithms, and the API design have been validated by the scientific community in multiple peer reviewed publications.
+                </p>
+                <p>Most of those publications are listed below :</p>
+            </div>
             <table class="w3-table w3-striped w3-bordered">
                 <tr class="mobdb-blue">
-                    <th>Venue</th>
                     <th>Publication</th>
                     <th>Authors</th>
+                    <th>Venue</th>
                     <th>Link</th>
                 </tr>
                 <tr>
-                    <td>Proc. of the Workshops of the EDBT/ICDT 2021 Joint Conference, 2021.</td>
+                    <td>MOVE: Interactive Visual Exploration of Moving Objects</td>
+                    <td>Maxime Schoemans, Mahmoud Sakr, Esteban Zimányi</td>
+                    <td>To appear in Proc. of the 5th International Workshop on Big Data Visual Exploration and Analytics, BigVis 2022, 2022.</td>
+                    <td><a href="https://docs.mobilitydb.com/pub/MOVE_BIGVIS22.pdf" target="_blank">pdf</a></td>
+                </tr>
+
+                <tr>
+                    <td>Analyzing Public Transport in the City of Buenos Aires with MobilityDB</td>
+                    <td>Juan Godfrid, Pablo Radnic, Alejandro Vaisman, Esteban Zimányi</td>
+                    <td>To appear in Public Transport, 2022.</td>
+                    <td><a href="https://docs.mobilitydb.com/pub/BuenosAiresGTFS_PT2022.pdf" target="_blank">pdf</a></td>
+                </tr>
+
+                <tr>
                     <td>Multiple aspect trajectories: a case study on fishing vessels in the Northern Adriatic sea</td>
                     <td>Giulia Rovinelli, Stan Matwin, Fabio Pranovi, Elisabetta Russo, Claudio Silvestri, Marta Simeoni, Alessandra Raffaetà</td>
+                    <td>Proc. of the Workshops of the EDBT/ICDT 2021 Joint Conference, 2021.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/BMDA-EDBT-ICDT-2021.pdf" target="_blank">pdf</a></td>
                 </tr>
                 <tr>
-                    <td>Appear in Proc. of the 37th IEEE International Conference in Data Engineering, 2021</td>
                     <td>Implementing Rigid Temporal Geometries in Moving Object Databases</td>
                     <td>Maxime Schoemans, Mahmoud Sakr, Esteban Zimányi</td>
+                    <td>Proc. of the 37th IEEE International Conference in Data Engineering, ICDE 2021</td>
                     <td><a href="https://docs.mobilitydb.com/pub/TempGeometriesICDE2021.pdf" target="_blank">pdf</a></td>
                 </tr>
                 <tr>
-                    <td>Proc. of the 28th International Conference on Advances in Geographic Information Systems, SIGSPATIAL' 20, pages 87-98, 2020.</td>
                     <td>Distributed Spatiotemporal Trajectory Query Processing in SQL</td>
                     <td>Mohamed Bakli, Mahmoud Sakr, Esteban Zimányi</td>
+                    <td>Proc. of the 28th International Conference on Advances in Geographic Information Systems, SIGSPATIAL' 20, pages 87-98, 2020.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/SigSpatial2020.pdf" target="_blank">pdf</a></td>
                 </tr>
                 <tr>
-                    <td>arXiv 2006.16900, 2020</td>
-                    <td>From Simple Features to Moving Features and Beyond ?</td>
+                    <td>From Simple Features to Moving Features and Beyond?</td>
                     <td>Anita Graser, Esteban Zimányi, Krishna Chaitanya Bommakanti</td>
+                    <td>arXiv 2006.16900, 2020</td>
                     <td><a href="https://arxiv.org/abs/2006.16900" target="_blank">pdf</a></td>
                 </tr>
                 <tr>
-                    <td>ACM Transactions on Database Systems, 45(4), 2020.</td>
                     <td>MobilityDB: A Mobility Database based on PostgreSQL and PostGIS</td>
                     <td>Esteban Zimányi, Mahmoud Sakr, Arthur Lesuisse</td>
+                    <td>ACM Transactions on Database Systems, 45(4), 2020.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/TODS.pdf" target="_blank">pdf</a></td>
                 </tr>
                 <tr>
-                    <td>In Proc. of the 21st IEEE International Conference on Mobile Data Management, MDM 2020, pages 238-239, 2020.</td>
                     <td>Distributed Mobility Data Management in MobilityDB</td>
                     <td>Mohamed Bakli, Mahmoud Sakr, Esteban Zimányi</td>
+                    <td>In Proc. of the 21st IEEE International Conference on Mobile Data Management, MDM 2020, pages 238-239, 2020.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/MobilityDBDemo_MDM2020.pdf" target="_blank">pdf</a></td>
                 </tr>
                 <tr>
-                    <td>In Proc. of the 8th ACM SIGSPATIAL International Workshop on Analytics for Big Geospatial Data, BigSpatial '19, 2019.</td>
                     <td>Distributed Moving Object Data Management in MobilityDB</td>
                     <td>Mohamed Bakli, Mahmoud Sakr, Esteban Zimányi</td>
+                    <td>In Proc. of the 8th ACM SIGSPATIAL International Workshop on Analytics for Big Geospatial Data, BigSpatial '19, 2019.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/DistMobilityDB_BigSpatial19.pdf" target="_blank">pdf</a> - <a href="https://docs.mobilitydb.com/pub/DistributedMobilityDB_BigSpatial19_Slides.pdf" target="_blank">Slides</a></td>
                 </tr>
                 <tr>
-                    <td><a href="https://docs.mobilitydb.com/pub/MobilityDBDemo_SSTD19_BDPA.pdf" target="_blank"><img class="medaillelogo" src="images/medaille.png"><span class="awardtxt">Best Demo Paper Award</span><img class="medaillelogo" src="images/medaille.png"></a><br>In Proc. of the 16th International Symposium on Spatial and Temporal Databases, SSTD 2019, p. 206-209.</td>
-                    <td>MobilityDB: A Mainstream Moving Object Database System.</td>
+                    <td><a href="https://docs.mobilitydb.com/pub/MobilityDBDemo_SSTD19_BDPA.pdf" target="_blank"><img alt="logomedaille" class="medaillelogo" src="images/medaille.png"><span class="awardtxt">Best Demo Paper Award</span><img class="medaillelogo" src="images/medaille.png"></a><br>MobilityDB: A Mainstream Moving Object Database System.</td>
                     <td>Esteban Zimányi, Mahmoud Sakr, Arthur Lesuisse, Mohamed Bakli</td>
+                    <td>In Proc. of the 16th International Symposium on Spatial and Temporal Databases, SSTD 2019, p. 206-209.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/MobilityDBDemo_SSTD19.pdf" target="_blank">pdf</a> - <a href="https://docs.mobilitydb.com/pub/MobilityDBDemo_SSTD19_Poster.pdf" target="_blank">Poster</a></td>
                 </tr>
                 <tr>
-                    <td>ISPRS International Journal of Geo-Information, 8(4): 170, 2019.</td>
-                    <td>DMobility Data Warehouses.</td>
+                    <td>Mobility Data Warehouses.</td>
                     <td>Alejandro A. Vaisman, Esteban Zimányi</td>
+                    <td>ISPRS International Journal of Geo-Information, 8(4): 170, 2019.</td>
                     <td><a href="https://docs.mobilitydb.com/pub/MobilityDW_IJGI19.pdf" target="_blank">pdf</a></td>
                 </tr>
             </table>
@@ -97,15 +135,15 @@
 </div>
 
 <!-- Presentations -->
-<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
+<div id="presentations" class="w3-row-padding w3-padding-64 w3-container">
     <div class="w3-content">
-        <div class="">
+        <div>
             <h1 class="w3-center w3-padding-32">Presentations</h1>
             <!-- for youtube video integration -->
 
             <div class="w3-center">
                 <h4><u><i>Managing Moving Objects Data with MobilityDB</i></u></h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/RQN0gqQvH4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="80%" height="350"src="https://www.youtube.com/embed/RQN0gqQvH4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <p>Talk given in the PGConf. Russia. March 2021, Online</p>
             </div>
 
@@ -124,6 +162,11 @@
                     <th>Presentation</th>
                     <th>Event</th>
                     <th>Link</th>
+                </tr>
+                <tr>
+                    <td>MobilityDB: Hands on Tutorial on Managing and Visualizing Geospatial Trajectories in SQL</td>
+                    <td>Talk given in the 3rd ACM SIGSPATIAL International Workshop on APIs and Libraries for Geospatial Data Science (SpatialAPI 2021). November 2021, Online</td>
+                    <td><a href="https://youtu.be/titgXKp0kms" target="_blank">Video</a></td>
                 </tr>
                 <tr>
                     <td>Towards a Well-Known Binary Format for Moving Features</td>
@@ -219,6 +262,7 @@
 
 </body>
 <script src="js/includeHTML.js"></script>
+<script src="js/buttons.js"></script>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'MobilityDBProject/MobilityDB'

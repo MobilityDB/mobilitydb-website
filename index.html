@@ -9,10 +9,24 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Fichiers CSS additionnel-->
-<link rel="stylesheet" href="styles/additionnalStyle.css">
+<link rel="stylesheet" href="styles/additionnalStyle.css?v=<?= filemtime('styles/additionnalStyle.css') ?>">
 <!-- Fichiers CSS slideShadow-->
 <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 <link rel="stylesheet" href="styles/styles.css">
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" href="images/mobilitydb-favicon.png"/>
+
+
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y5QKFKCCWJ"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Y5QKFKCCWJ');
+</script>
+</head>
 
 
 <!-- Navbar -->
@@ -22,7 +36,7 @@
 
 <!-- Header -->
 <header class="w3-container mobdb-blue w3-center" style="padding:60px 16px">
-    <h1 class="w3-margin w3-jumbo">MobilityDB</h1>
+    <h1 class="w3-margin maintitle">MobilityDB</h1>
     <p class="w3-xlarge">An open source geospatial trajectory data management & analysis platform.
     </p>
     <a class="w3-button w3-orange w3-padding-large w3-large w3-margin-top" href="https://github.com/MobilityDB/MobilityDB"><img alt="github-logo" class="githublogo" src="images/github-logo.png">View on Github</a>
@@ -33,7 +47,7 @@
     <div class="w3-content">
         <div class="w3-twothird w3-margin-right">
             <p>
-                Location tracking devices, such as GPS, are nowadays widely used in smart phones, and in vehicles. As a result, geospatial trajectory data are currently being collected and used in many application domains. MobilityDB provides the necessary database support for storing and querying such geospatial trajectory data
+                Location tracking devices, such as GPS, are nowadays widely used in smartphones, and in vehicles. As a result, geospatial trajectory data are currently being collected and used in many application domains. MobilityDB provides the necessary database support for storing and querying such geospatial trajectory data
             </p>
             <p>
                 MobilityDB is implemented as an extension to PostgreSQL and PostGIS. It implements persistent database types, and query operations for managing geospatial trajectories and their time-varying properties.
@@ -42,7 +56,7 @@
         </div>
     </div>
     <div class="w3-third">
-        <img class="mobdblogo" src="images/mobilitydb-logo.png" alt="mobilitydb-logo">
+        <img class="mobdblogo mobdb-hide-large" src="images/mobilitydb-logo.png" alt="mobilitydb-logo">
     </div>
 </div>
 
@@ -79,26 +93,31 @@
     </div>
 </div>
 
+<!-- Docker  -->
+<div class="w3-container mobdb-blue w3-center  w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Docker containers with MobilityDB and all its dependencies are available</h1>
+</div>
+
+
 
 <!-- Easy to Use -->
-<div class="w3-row-padding  w3-padding-64 w3-container">
+<div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
     <div class="w3-content">
         <div class="w3-center">
             <h1>Easy to Use</h1>
-
             <h5 class="w3-padding-32">MobilityDB provides two main geospatial trajectory type: tgeompoint for a temporal geometry point, and tgeogpoint for a temporal geography point. Both can represent a geospatial point that moves over time, where the coordinates are respectively expressed as PostGIS geometry or geography. It also provides a rich set of functions to manage these type; including: input/output, topological relationships, speed, direction, distance, etc.</h5>
         </div>
-        <table>
+        <table class="usecase">
             <tr>
-                <td class="td-usecase">
+                <td class="td-usecase-txt">
                     <div class="textAreaLeft">
                         <div id="myTextareaQuery" ></div>
                     </div>
                 </td>
-                <td class="td-usecase">
+                <td class="td-usecase-arrow">
                     <img class="cellfleche" src="images/right-arrow.svg" alt="arrow">
                 </td>
-                <td class="td-usecase">
+                <td class="td-usecase-txt">
                     <div class="textAreaRight">
                         <div id="myTextareaResponse" ></div>
                     </div>
@@ -106,15 +125,6 @@
             </tr>
 
         </table>
-        <!--
-        <div class="textAreaLeft">
-            <div id="myTextareaQuery" ></div>
-        </div>
-        <div class="textAreaRight">
-            <div id="myTextareaResponse" ></div>
-        </div>
-        -->
-
         <div class="w3-center">
             <a href="tutorials.html" class="w3-center w3-button w3-orange w3-padding-large w3-large w3-margin-top">Check out our Workshop</a>
         </div>
@@ -123,10 +133,21 @@
 
 
 
-<!-- Docker  -->
-<div class="w3-container mobdb-blue w3-center  w3-padding-64">
-    <h1 class="w3-margin w3-xlarge">Docker containers with MobilityDB and all its dependencies are available</h1>
+<!-- users logos  -->
+<div class="w3-container">
+    <div class="w3-center">
+        <table class="users">
+            <tr class="users-logo">
+                <td class="td-userslogo"><a href="https://www.adonmo.com/" target="_blank"><img class="andonmologo" src="images/adonmo_logo.jpg" alt="andonmologo"></a></td>
+                <td class="td-userslogo"><a href="https://transport.mos.ru/en" target="_blank"><img class="moscowtransportlogo" src="images/Moscow_Transport_logo.svg" alt="oscowtransportlogo"></a></td>
+                <td class="td-userslogo"><a href="https://www.cybertec-postgresql.com/de/" target="_blank"><img class="cyberteclogo" src="images/cybertec_logo.svg" alt="cyberteclogo"></a></td>
+                <td class="td-userslogo"><a href="https://www.opentripplanner.org/" target="_blank"><img class="otplogo" src="images/otp_logo.svg" alt="otplogo"></a></td>
+                <td class="td-userslogo"><a href="https://www.syty.io/" target="_blank"><img class="sytyiologo" src="images/sytyio_logo.png" alt="sytyiologo"></a></td>
+            </tr>
+        </table>
+    </div>
 </div>
+
 
 <!-- Users' Applications -->
 <div class="w3-row-padding w3-padding-64 w3-container w3-light-grey">
@@ -135,12 +156,11 @@
 
 
 
-<!-- Conteneur principal de tout le diaporama -->
+<!-- Slideshow section -->
 <main>
 <div class="diapo">
-    <!-- Conteneur des "diapos" -->
     <div class="elements">
-        <!-- Première diapo -->
+        <!-- first slide -->
         <div class="mySlides w3-animate-right element">
             <div class="w3-content">
                 <div class="w3-twothird">
@@ -156,7 +176,7 @@
                 </div>
             </div>
         </div>
-        <!-- Deuxième diapo -->
+        <!-- second slide -->
         <div class="mySlides w3-animate-right element">
             <div class="w3-content">
 
@@ -171,7 +191,8 @@
 
             </div>
         </div>
-        <!-- Troisième diapo -->
+        <!-- third slide -->
+
         <div class="mySlides w3-animate-right element">
             <div class="w3-content">
 
@@ -186,11 +207,29 @@
 
             </div>
         </div>
-    </div>
-    <!-- Fleches de navigation    -->
 
-    <i id="nav-gauche" class="las la-chevron-left w3-hover-white"></i>
-    <i id="nav-droite" class="las la-chevron-right w3-hover-white"></i>
+        <!-- 4th slide -->
+        <div class="mySlides w3-animate-right element">
+            <div class="w3-content">
+
+                <div class="w3-twothird">
+                    <h3 class="w3-padding-32">Analyzing historical flight data with MobilityDB</h3>
+                    <p class="w3-text-grey">Second article from Florian Nadler about MobilityDB. He invests some time and showcase MobilityDB’s rich feature stack by analyzing historical flight data from OpenSky-Network, a non-profit organisation which has been collecting air traffic surveillance data since 2013.</p>
+                    <a href="https://www.cybertec-postgresql.com/en/analyzing-historical-flight-data-with-mobilitydb/" target="_blank"> This article covers all the steps needed to quick-start analyzing spatio-temporal data with PostGIS and MobilityDB together.</a>
+                </div>
+                <div class="w3-third w3-center">
+                    <a href="https://www.cybertec-postgresql.com/en/analyzing-historical-flight-data-with-mobilitydb/" target="_blank"><img class="flying_data" src="images/flying_data.jpg" alt="map of flying_data"></a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Slideshow Indicators (arrows)   -->
+
+    <i id="nav-gauche" class="las la-chevron-left w3-hover-white mobdb-hide-large"></i>
+    <i id="nav-droite" class="las la-chevron-right w3-hover-white mobdb-hide-large"></i>
 
 
 </div>
