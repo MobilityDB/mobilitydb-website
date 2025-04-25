@@ -3,18 +3,14 @@
 function ClipboardFill(opt) {
     var value = "error";
     if (opt === "ACM") {
-        value = "Esteban Zimányi, Mahmoud Sakr, and Arthur Lesuisse. 2020. MobilityDB: A Mobility Database Based on PostgreSQL and PostGIS. <i>ACM Trans. Database Syst.</i> 45, 4, Article 19 (December 2020) DOI:https://doi.org/10.1145/3406534"
+        value = "Mahmoud Sakr, and Esteban Zimányi. <i>Mobility Data Science: From Data to Insights</i> Springer 2025, ISSN: 978-3-031-82636-8"
     } else if (opt === "BiBTeX") {
-        value = "@article{MobilityDBTODS2020,\n" +
-            "author = {Zim\\'{a}nyi, Esteban and Sakr, Mahmoud and Lesuisse, Arthur},\n" +
-            "title = {{MobilityDB}: A Mobility Database Based on {PostgreSQL} and {PostGIS}},\n" +
-            "year = {2020},\n" +
-            "publisher = {Association for Computing Machinery},\n" +
-            "volume = {45},\n" +
-            "number = {4},\n" +
-            "doi = {10.1145/3406534},\n" +
-            "journal = {ACM Trans. Database Syst.},\n" +
-            "month = dec,\n" +
+        value = "@article{MobilityDataScience2025,\n" +
+            "author = {Sakr, Mahmoud and Vaisman, Alejandro and Zim\\'{a}nyi, Esteban},\n" +
+            "title = {Mobility Data Science: From Data to Insights},\n" +
+            "publisher = {Springer},\n" +
+            "year = {2025},\n" +
+            "issn = {978-3-031-82636-8},\n" +
             "}\n" +
             "\n"
     } else {
